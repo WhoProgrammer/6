@@ -1,0 +1,489 @@
+
+      /*=============== GOOGLE FONTS ===============*/
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      /*=============== VARIABLES CSS ===============*/
+      :root{
+        --title-color: rgb(251, 54, 0);
+      }
+      /*=============== BASE ===============*/
+       * {
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+          }
+        
+       body{
+           padding: 0 !important;
+           margin: 0 !important;
+           width: 100vw !important;
+           height: 100vh !important;
+           background-color: black !important;
+           color: white !important;
+           overflow-x: hidden !important;
+       }
+       a{
+           text-decoration: none;
+           color: #ffffff;
+       }
+       li {
+          list-style: none;
+          }
+          /*=============== REUSABLE CSS CLASSES ===============*/
+       .container {
+          max-width: 1420px;
+          margin-inline: 1.5rem;
+                  }   
+       h1{color: var(--title-color) !important;}
+          /* ==================== HEADER =================== */
+          header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 95%;
+            margin: auto !important;
+            display: flex !important;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 10px;
+            z-index: 10;
+          }
+          header ul{
+            display: flex;
+            gap: 2vw;
+          }
+          header ul li{
+            padding: 0 5px;
+            position: relative;
+          }
+          header ul li::before{
+            content: "";
+            position: absolute;
+            bottom: 2px;
+            width: 100%;
+            height: 10%;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(90deg,rgba(0, 255, 251, 0.053),rgb(0, 117, 121),rgba(0, 255, 217, 0.064));
+            transform: rotateY(90deg);
+            transition: .3s;
+          }
+          header ul li:hover::before{
+            transform: rotateY(0deg);
+          }
+          header ul li a{color: #fff; transition: .3s; font-weight: 800;}
+          header ul li:hover a{
+            color: rgb(0, 241, 237);
+          }
+          .logo img{
+            width: 160px;
+          }
+          .search{
+            position: relative;
+            width: 300px;
+            height: 40px;
+          }
+          
+        .inputBox{
+            position: relative;
+            width: 300px;
+        }
+        .inputBox .i{
+            position: absolute;
+            bottom: 40%;
+            right: 10%;
+            cursor: pointer;
+        }
+        .inputBox input{
+            position: relative;
+            width: 100%;
+            padding: 10px 0;
+            background: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid azure;
+            color: floralwhite;
+            translate: 0 5px;
+          }
+        .inputBox label{
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            padding: 10px 0;
+            pointer-events: none;
+            color: #ffffff;
+            user-select: none;
+          }
+        .inputBox label span {
+            position: relative;
+            display: inline-flex;
+            flex-direction: row;
+            font-size: 1.25em;
+            letter-spacing: 0.05em;
+            transition: .25s cubic-bezier(0.5,1,0.5,1.5);
+        }
+        .inputBox input:focus ~ label span,
+        .inputBox input:valid ~ label span{
+            color: #0f0;
+            text-shadow: 0 0 5px #0f0,
+            0 0 15px #0f0,
+            0 0 30px #0f0;
+            transform: translateY(-20px);
+        }
+        .inputBox input:focus ,
+        .inputBox input:valid  {
+            border-bottom: 2px solid #ffffff;
+        }
+          /* ==================== MAIN =================== */
+          /* ==================== SECTION1 =================== */
+          .banner{
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            padding: 0 6vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.053),rgba(0, 0, 0, 0.695)), url(IMG/1.jpg) no-repeat; 
+            background-size: cover;
+            transition: .3s;
+          }
+          .content{
+            position: relative;
+            max-width: 550px;
+            display: none;
+            visibility: hidden;
+            transform: scale(1);
+            transition: .5s;
+            z-index: 1;
+          }
+          .content.active{
+            display: block !important;
+            visibility:visible;
+            transform: scale(1);
+            transition: .5s;
+          }
+          .img-title{
+            width: 250px;
+            height: 150px;
+          }
+          .banner .content h4{
+            color: rgb(234, 234, 234);
+            font-weight: 400;
+            font-size: 30px;
+          }
+          .banner .content h4 span{
+            padding: 0 10px;
+            border-right: 1px solid gray;
+          }
+          .banner .content h4 span:last-child{
+            border-right: none;
+          }
+          .banner .content h4 span i{
+            background-color: var(--title-color);
+            color: #fff;
+            padding: 0 8px;
+            display: inline-block;
+            border-radius: 2px;
+          }
+          .banner .content p{
+            font-size: 1em;
+            font-weight: 300;
+            line-height: 1.5em;
+            margin: 10px 0 20px;
+          }
+          .banner .content .button{
+            position: relative;
+            display: flex;
+          }
+          .banner .content .button a{
+            position: absolut;
+            display: inline-flex;
+            margin-right: 10px;
+            background: var(--title-color);
+            color: #fff;
+            padding: 6px 20px;
+            transition: .5s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            align-items: center;
+            
+          }
+          .banner .content .button .i{
+            margin: 0 5px;
+          }
+          .banner .content .button  a:nth-child(2){
+            background-color: rgba(0, 0, 0, 0.516);
+            border: 1px solid rgba(255, 255, 255, 0.332);
+          }
+          .banner .content .button a:hover:nth-child(2){
+            background: var(--title-color);
+          }
+          .banner .carousel-box{
+            position: relative;
+            min-width: 50vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.088);
+            box-shadow: 20px 20px 50px rgb(0, 0, 0);
+            backdrop-filter: blur(16px);
+            border-radius: 20px;
+          }
+          .carousel{
+            position: relative;
+            height: 300px !important;
+            perspective: 1500; 
+            /* overflow: hidden; */
+          }
+          .carousel .carousel-item{
+            /* margin-top: -35px !important; */
+            position: relative;
+            width: 250px;
+            height: 270px !important;
+            cursor: pointer;
+            filter: drop-shadow(0 0 40px rgb(46, 46, 46));
+          }
+
+          .carousel .carousel-item img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transition: .3s;
+          }
+          .carousel .carousel-item img:nth-child(2){
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: .3s;
+            opacity: 0;
+            scale: .85;
+          }
+          .carousel .carousel-item img:nth-child(2):hover{
+            transform: translateX(0) translateY(-35px);
+            /* scale: 1; */
+            opacity: 1;
+          }
+          .carousel .carousel-item:hover img:nth-child(1){
+             transform: translateX(0) translateY(-10px) rotateX(-45deg);  
+                    
+          }
+          .carousel-box .carousel .carousel-item:active{
+            cursor:grabbing;
+          }
+          
+
+          .play{
+            position: absolute;
+            bottom: 50px;
+            left: 100px;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            cursor: pointer;
+            font-weight: 500;
+            transition: .3s;
+          }
+          .play .i{
+            margin-right: 10px;
+            font-size: 40px;
+            cursor: pointer;
+          }
+          .play:hover{
+            color: var(--title-color);
+          }
+          .sci{
+            position: absolute;
+            bottom: 50px;
+            right: 100px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+          }
+          .sci a{
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 20px;
+            transition: .3s;
+          }
+          .sci a:hover{
+            color: var(--title-color);
+          }
+
+          /* ==================== video  =================== */
+          .dnone{
+            width: max-content;
+            height: max-content;
+            /* display: none; */
+          }
+          .video{
+            top: 0;
+            left: 0;
+            position: fixed;
+            width: 0vw;
+            height: 0vh;
+            background: rgba(81, 81, 81, 0.16);
+            backdrop-filter: blur(15px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: -100;
+            transition: .4s;
+            opacity: 0;
+          }
+          .video button{
+            position: absolute;
+            color: #a3a3a3;
+            background-color: rgba(0, 255, 0, 0);
+            border: none;
+            outline: none;
+            scale: 2;
+            top: 20px;
+            transition: .3s ease-in-out;
+            left: 0; right: 0; margin: auto;
+            width: fit-content;
+            display: inline-block;
+            height: 17px
+          }
+          .video button:hover{
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            rotate: 45deg;
+          }
+          /* ==================== video =================== */
+          /* ==================== SECTION2 =================== */
+          /* .section2{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .section2 div{
+            border: 1px solid red;
+            padding: 2px;
+          } */
+          /* ==================== MAIN =================== */
+          /* ==================== FOOTER =================== */
+
+          /* ===================responsive================= */
+          @media (max-width: 1030px) {
+            header{
+              max-width: 1000px;
+            }
+            .banner{
+              padding: 0 50px;
+              max-width: 1000px;
+            }
+            main{
+              padding-bottom: 0;
+            }
+          }
+          @media (max-width: 930px) {
+            .banner .carousel-box{
+            width: 50px;
+            border-radius: 20px;
+            align-self: center;
+          }
+          .carousel{
+            position: relative;
+            height: 260px !important;
+            /* overflow: visible; */
+          }
+          .carousel .carousel-item img{
+            width: 80%;
+            height: 90%;
+            border-radius: 10px;
+            margin-top: 15px;
+          }
+          } 
+          @media (max-width: 850px) {
+            .banner{
+              flex-direction: column;
+              justify-content: left;
+              align-items: baseline;
+              gap: 50px;
+            }
+            .inputBox{
+              width: 250px;
+          }
+          .sci{
+            bottom: -120px !important;
+            right: 100px;
+          }
+          } 
+          @media (max-width: 770px) {
+            header{
+              flex-direction: column;
+              background: rgba(0, 0, 0, 0.504);
+              justify-content: center !important;
+              width: 100%;
+              padding-bottom: 20px;
+              backdrop-filter: blur(15px);
+            }
+            .banner{
+              padding-top: 135px;
+              
+            }
+            .banner h4{margin-top: -0px; font-size: 20px;}
+            .inputBox{
+              width: 350px;
+          }
+          .img-title{
+            width: 150px;
+            height: 70px;
+          }
+            .play{
+              position: relative;
+              transform: translate();
+            }
+            .banner .carousel-box{
+          background: rgba(0, 0, 0, 0);
+          backdrop-filter: blur(3px);
+          min-width: 450px;
+         }
+          } 
+          @media (max-width: 450px) {
+            
+          .carousel{
+            height: 240px !important;
+            /* overflow: auto; */
+          }
+          .banner{
+            padding-left: 20px;
+            padding-right: 10px;
+            /* overflow: hidden; */
+            padding-bottom: 0;
+
+          }
+            .banner .carousel-item{
+              box-shadow: none;
+              filter: drop-shadow(0);
+            }
+            .banner .carousel-box{
+             min-width: 300px;
+             filter: drop-shadow(0);
+             box-shadow: none;
+              backdrop-filter: blur(0);
+              background: rgba(0, 0, 0, 0);
+              
+             }
+             .inputBox{
+              width: 280px;
+          }
+          .sci{
+            bottom: -100px !important;
+            right: 80px;
+          }
+
+          }
+
+      
